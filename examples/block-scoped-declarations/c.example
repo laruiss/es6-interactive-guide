@@ -1,0 +1,14 @@
+{
+    let aVariable = 'let variable';
+    const aConstant = 'const constant';
+
+    try {
+        aVariable = 'let variable changed';
+        console.log('variable is now changed');
+        aConstant = 'const cannot be changed'; // TypeError
+        console.log('This will not appear');
+    } catch (e) {
+        //Should log this: TypeError: Assignment to constant variable.
+        console.log(e.name + ': ' + e.message);
+    }
+}

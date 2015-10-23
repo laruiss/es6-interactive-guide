@@ -1,0 +1,16 @@
+{
+    var functionScoped = 'var variable';
+    let blockScoped = 'let variable';
+
+    console.log(functionScoped);
+    console.log(blockScoped);
+}
+try {
+     // functionScoped is declared and intialized
+    console.log(functionScoped);
+    // blockScoped is not declared...
+    console.log(blockScoped);
+} catch (e) {
+    // ...so the lookup throws an error
+    console.log(e.name + ': ' + e.message);
+}

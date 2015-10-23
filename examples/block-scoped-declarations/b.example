@@ -1,0 +1,32 @@
+try {
+    // functionScoped is declared (its declaration is hoisted)
+    // though not yet initialized, so it returns 'undefined'
+    console.log(functionScoped);
+    // "Temporal Dead Zone" (TDZ) error:
+    // blockScoped is not declared yet,
+    // so the lookup throws an error (ReferenceError)
+    blockScoped;
+} catch (e) {
+    console.log(e.name + ': ' + e.message);
+}
+
+{
+    // Block
+    try {
+        // functionScoped is declared (its declaration is hoisted)
+        // and still not initialized
+        console.log(functionScoped);
+        // Still in "Temporal Dead Zone" (TDZ):
+        // (Depending on your browser version, your browser may not behave like it is in the TDZ,
+        // a future version may correct this).
+        console.log(blockScoped);
+    } catch (e) {
+        console.log(e.name + ': ' + e.message);
+    }
+
+    var functionScoped = 'var variable';
+    let blockScoped = 'let variable';
+
+    console.log(functionScoped, 'is now initialized');
+    console.log(blockScoped, 'is now initialized');
+}

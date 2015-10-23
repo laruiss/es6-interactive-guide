@@ -1,3 +1,4 @@
+import BlockScoped from "./examples/block-scoped-declarations/index.jsx";
 import Arrow from "./examples/arrow-functions/index.jsx";
 import Classes from "./examples/classes/index.jsx";
 import ConciseMethods from "./examples/concise-methods/index.jsx";
@@ -7,6 +8,9 @@ import ObjectLiterals from "./examples/object-literals/index.jsx";
 import SpreadOperator from "./examples/spread-operator/index.jsx";
 
 export default [{
+  name: "Block scoped declarations",
+  example: BlockScoped
+}, {
   name: "Arrow functions",
   example: Arrow
 }, {
